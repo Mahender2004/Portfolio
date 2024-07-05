@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(0, 0, 0);
+            /* width: 98% ; */
+            /* color: white; */
+        }
+
+
+        header {
+            background-color: rgb(56, 56, 56);
+            height: 70px;
+            box-shadow: 1px 1px 40px 1px cyan;
+
+        }
+
+        #header {
+            position: relative;
+            /* background-color: rgb(46, 46, 46)); */
+            position: fixed;
+            width: 100%;
+            z-index: 100000;
+        }
+
+        h3 {
+            position: absolute;
+            left: 20px;
+            top: 18px;
+            font-size: 30px;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .main {
+            /* height: 100vh; */
+            position: absolute;
+            left: 580px;
+            top: 25px;
+
+
+        }
+
+        .main ul li {
+            display: inline-block;
+            position: relative;
+            /* left: 120px; */
+            /* list-style: none; */
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            position: relative;
+            margin: 0 10px;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        ul li a::before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            left: 15px;
+            bottom: 6px;
+            border: 5px solid cyan;
+            border-width: 0 0 2px 2px;
+            transition: all 0.3s;
+            opacity: 0;
+        }
+
+        ul li a::after {
+            content: "";
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            right: 15px;
+            top: 6px;
+            border: 5px solid cyan;
+            border-width: 2px 2px 0 0;
+            transition: all 0.3s;
+            opacity: 0;
+        }
+
+        ul li a:hover::before {
+            left: -5px;
+            bottom: -5px;
+            opacity: 1;
+        }
+
+        ul li a:hover::after {
+            right: -5px;
+            top: -5px;
+            opacity: 1;
+        }
+
+        ul li a:hover {
+            /* background-color: rgb(184, 98, 112); */
+            background-color: cyan;
+            color: black;
+        }
+
+        /* Home-page-end */
+
+
+
+        .main-contact {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        .contact-mid h1 {
+            position: absolute;
+            top: -70px;
+            left: 260px;
+            color: rgb(255, 255, 255);
+            margin-bottom: 30px;
+            text-transform: capitalize;
+            text-align: center;
+            font-weight: 100;
+
+        }
+
+        .contact-mid {
+            width: 650px;
+            /* height: 500px; */
+            position: absolute;
+            top: 380px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 50px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .contact-mid .inputbox {
+            position: relative;
+        }
+
+        .contact-mid .inputbox input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: black;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid black;
+            /* border-radius: 10px; */
+            background: transparent;
+            outline: none;
+        }
+
+        .contact-mid .inputbox label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            letter-spacing: 1px;
+            padding: 10px 0;
+            color: black;
+            transition: 0.5s;
+        }
+
+        .contact-mid .inputbox input:focus~label,
+        .contact-mid .inputbox input:valid~label {
+            top: -20px;
+            left: 0;
+            color: blueviolet;
+            font-size: 15px;
+        }
+
+        .btn {
+            position: relative;
+            top: 35px;
+            left: -300px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            background-color: rgb(92, 41, 139);
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 5px cyan,
+                0 0 25px cyan, 0 0 50px cyan,
+                0 0 100px cyan, 0 0 200px cyan;
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        .footer {
+    background-color: rgb(0, 0, 0);
+    color: #fefefe;
+    position: absolute;
+    top: 45rem;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .footer .heading {
+    color: #fefefe;
+    max-width: 1010px;
+    width: 90%;
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+  
+  .footer .content {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1.5rem;
+  }
+  
+  .footer .content p {
+    margin-bottom: 1.3rem;
+  }
+  
+  .footer .content a {
+    text-decoration: none;
+    color: #fefefe;
+  }
+  
+  .footer .content a:hover {
+    border-bottom: 1px solid #971717;
+  }
+  
+  .footer .content h4 {
+    margin-bottom: 1.3rem;
+    font-size: 19px;
+  }
+  
+  footer {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  footer hr {
+    margin: 2rem 0;
+  }
+  
+  @media (max-width: 767px) {
+    .footer .content {
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+    }
+  
+    .footer {
+      position: unset;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .footer .content,
+    .footer {
+      font-size: 14px;
+    }
+  }
+  
+  @media (orientation: landscape) and (max-height: 500px) {
+    .footer {
+      position: unset;
+    }
+  }
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HOME PAGE START -->
+
+    <div id="header">
+        <header>
+            <h3>Portfolio</h3>
+            <div class="main">
+                <ul>
+                    <li>
+                        <a href="portfolio.html">home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">about me</a>
+                    </li>
+                    <li>
+                        <a href="skills.html">skills</a>
+                    </li>
+                    <!-- <li>
+                                <a href="">Project</a>
+                            </li> -->
+                    <li>
+                        <a href="contact-me.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <div class="main-contact">
+        <div class="contact-mid">
+            <h1>Contact Me!</h1>
+            <form action="https://formspree.io/f/xyzggaba" method="POST">
+                <div class="inputbox">
+                    <input type="text" name="Full Name" autocomplete="off" required>
+                    <label>Full Name</label>
+                </div>
+                <div class="inputbox">
+                    <input type="Email" name="Email Address" autocomplete="off" required>
+                    <label>Email Address</label>
+                </div>
+                <div class="inputbox">
+                    <input type="number" name="Number" autocomplete="off" required>
+                    <label>Number</label>
+                </div>
+                <textarea style="cursor: pointer;" name="this is emty box" id="" placeholder="Your Message" cols="38"
+                    rows="8"> </textarea>
+
+                <input class="btn" type="submit" value="Submit">
+                <input class="btn" type="reset" value="Reset">
+
+            </form>
+        </div>
+    </div>
+<!-- 
+    <footer>
+        <div class="content-footer">
+            <div class="top">
+                <div class="logo-details">
+                    <span class="logo_name">Logo</span>
+                </div>
+                <div class="media-icons">
+                    <a href="https://www.facebook.com/"> <i class="fab fa-facebook-f"></i></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                </div>
+            </div>
+            <div class="link-boxes">
+                <ul class="box">
+                    <li class="link_name">Pages</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Services</li>
+                    <li></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Account</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Skills</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </footer> -->
+
+
+
+
+
+
+
+
+    
+    <div class="footer">
+        <div class="heading">
+          <h2>Mahender<sup></sup></h2>
+        </div>
+        <div class="content">
+          <div class="services">
+            <h4>Services</h4>
+            <p><a href="#">Web development</a></p>
+            <!-- <p><a href="#">Web development</a></p> -->
+            <!-- <p><a href="#">DevOps</a></p> -->
+            <!-- <p><a href="#">Web designing</a></p> -->
+          </div>
+          <div class="social-media">
+            <h4>Social</h4>
+            <p>
+              <a href="#"
+                ><i class="fab fa-linkedin"></i> Linkedin</a
+              >
+            </p>
+            <p>
+              <a href="#"
+                ><i class="fab fa-twitter"></i> Twitter</a
+              >
+            </p>
+            <p>
+              <a href="https://github.com/farazc60"
+                ><i class="fab fa-github"></i> Github</a
+              >
+            </p>
+            <p>
+              <a href="https://www.facebook.com/codewithfaraz"
+                ><i class="fab fa-facebook"></i> Facebook</a
+              >
+            </p>
+            <p>
+              <a href="https://www.instagram.com/codewithfaraz"
+                ><i class="fab fa-instagram"></i> Instagram</a
+              >
+            </p>
+          </div>
+          <div class="links">
+            <h4>Quick links</h4>
+            <p><a href="portfolio.html">Home</a></p>
+            <p><a href="about.html">About</a></p>
+            <p><a href="skills.html">skills</a></p>
+            <p><a href="contact-me.html">Contact</a></p>
+          </div>
+          <div class="details">
+            <h4 class="address">Address</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur <br />
+              adipisicing elit. Cupiditate, qui!
+            </p>
+            <h4 class="mobile">Mobile</h4>
+            <p><a href="#">+91-9315775213</a></p>
+            <h4 class="mail">Email</h4>
+            <p><a href="#">mahender931577@gmail.com</a></p>
+          </div>
+        </div>
+        <footer>
+          <hr />
+          © 2024 codewith Mahender.
+        </footer>
+      </div>
+</body>
+
+</html>
